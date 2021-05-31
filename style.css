@@ -1,0 +1,239 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+  License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* end of Eric Mayer's reset*/
+
+h1 {
+  padding-top: 50px;
+  font-size: 40px;
+  font-family: monospace;
+  text-align: center;
+  color: yellow;
+}
+
+div {
+  border-radius: 30px;
+  width: 30%;
+  height: 150px;
+  margin: 50px auto;
+
+}
+
+
+#gradient {
+    background: linear-gradient(179deg, red, blue, green);
+    background-size: 400%;
+    animation: grad 2s linear infinite;
+}
+
+@keyframes grad {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+li {
+  font-family: fantasy;
+  color: blue;
+}
+
+.list {
+  font-size: 2.7em;
+  padding: 50px 50px;
+  list-style: none;
+  border-style: outset;
+  border-width: 5px;
+}
+
+#listTask {
+    position: relative;
+}
+
+#listTask::after {
+  content: "";
+  position: absolute;
+  bottom: 150px;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid red;
+  border-bottom-left-radius: 100% -100px;
+  border-bottom-right-radius: 100% 60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#tileTask {
+  font-size: 40px;
+  width: 75vw;
+  margin-top: 300px;
+  margin-bottom: 300px;
+  text-align: center;
+}
+#tileTask .tiles {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-direction: row-reverse;
+    padding: 0;
+    line-height: 3rem;
+}
+
+#tileTask ul {
+  list-style: none;
+}
+
+.tiles > li {
+  position: relative;
+  width: max-content;
+  flex: 1;
+  color: Orangered !important;
+}
+
+.tiles > li:hover {
+    background: hsl(0, 15%, 75%);
+}
+
+
+.tiles > li > ul {
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 3rem;
+  transition: .6s;
+}
+
+.tiles > li:hover > ul {
+    height:12rem;
+}
+
+
+.tiles > li:hover > ul > li:hover {
+    background: hsl(0, 85%, 75%);
+}
+
+.tiles ul {
+}
+
+.tiles > li > ul > li {
+    cursor: crosshair;
+}
+
+ol ~ p {
+  position: absolute;
+  bottom: 30vh;
+  color: green;
+}
+
+ol + p {
+  bottom: 35vh;
+  color: Orangered;
+}
+
+[id*="gradient"] {
+  font-size: 50px;
+}
+
+#button {
+  background: red;
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  left: 50vw;
+  bottom: 3vh;
+  font-size: 30px;
+}
+
+#selectProvince {
+  padding: 5px;
+  position: relative;
+  bottom: 100px;
+  margin-left: 30vw;
+  font-family: 'Abhaya Libre', sans-serif;
+}
+
+#selectCity {
+  padding: 5px;
+  position: relative;
+  bottom: 100px;
+  font-family: 'Abhaya Libre', sans-serif;
+}
+
+#numInput {
+  position: relative;
+  left: 300px;
+  bottom: 260px;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 5 5px;
+}
+#tableBody {
+  position: absolute;
+  padding-left: 40vw;
+  padding-bottom: 100px;
+}
+
+#blackCell {
+  background: black;
+  color: white;
+}
+
+#whiteCell {
+  background: white;
+  color: black;
+  border: 1px solid black;
+}
